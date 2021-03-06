@@ -1,6 +1,9 @@
 // this variable is for result we will store all 3 sentences later on to form horoscope
 let result = "";
 
+// array of ending words where you should put to create ending of your sentence
+let endingWords = ['good luck','bad luck','super coming days','good health','poor money','bad relationship with friends','argue with someone close to you','visitor that will suprise you'];
+
 // array of planets, where we can use with startPlanet arrays to make sentence
 let planet = ['mars','venus','jupiter','new moon','the sun','mercury'];
 
@@ -18,6 +21,15 @@ const makeSentence = (beginning,ending) =>{
     return result;
 }
 
+// function that only change ending, first argument is static never change string, and this function combine those to create
+// sentence and simply return to the caller
+const changeEnding = (beginning,ending) =>{
+    let   index = Math.floor(Math.random() * ending.length);
+    return beginning + " " + ending[index];
+}
+
 // testing our method
 let firstSentence = makeSentence(startPlanet,planet);
+let secondSentence = changeEnding("You are having",endingWords);
 console.log(firstSentence);
+console.log(secondSentence);
