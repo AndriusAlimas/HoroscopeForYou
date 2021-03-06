@@ -1,8 +1,11 @@
 // this variable is for result we will store all 3 sentences later on to form horoscope
 let result = "";
 
-// array of ending words where you should put to create ending of your sentence
-let endingWords = ['good luck','bad luck','super coming days','good health','poor money','bad relationship with friends','argue with someone close to you','visitor that will suprise you'];
+// array of ending words where you should put to create ending of your sentence, combine with start have
+let havingEndingWords = ['good luck','bad luck','super coming days','good health','poor financial','bad relationship with friends','argue with someone close to you','visitor that will suprise you'];
+
+// array of ending words where you should put to create ending of your sentence, combine with start should
+let shouldEndingWords = ['trust no one', 'believe what you doing', 'carefully avoid people', 'save money for upcoming events','leave the house','buy lotery ticket','avoid conversations','speak with your family','go to the party' ];
 
 // array of planets, where we can use with startPlanet arrays to make sentence
 let planet = ['mars','venus','jupiter','new moon','the sun','mercury'];
@@ -29,7 +32,7 @@ const changeEnding = (beginning,ending) =>{
 }
 
 // testing our method
-let firstSentence = makeSentence(startPlanet,planet);
-let secondSentence = changeEnding("You are having",endingWords);
-console.log(firstSentence);
-console.log(secondSentence);
+  result = makeSentence(startPlanet,planet);
+  result += "\n\n" + changeEnding("You are having",havingEndingWords);
+  result += "\n\n" + changeEnding("You should: ",shouldEndingWords);   
+console.log(result);
